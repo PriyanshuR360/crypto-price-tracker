@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { updatePrices } from './redux/cryptoSlice';
+import CryptoTable from './components/CryptoTable';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      dispatch(updatePrices());
+    }, 2000); // Update every 2 seconds
+    return () => clearInterval(interval);
+  }, [dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Real-Time Crypto Price Tracker</h1>
+      <CryptoTable />
     </div>
   );
 }
