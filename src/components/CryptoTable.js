@@ -9,7 +9,7 @@ import usdtLogo from '../assets/icons/usdt.png';
 import xrpLogo from '../assets/icons/xrp.png';
 import bnbLogo from '../assets/icons/bnb.png';
 
-// ✅ Fixed: Use correct chart2.svg instead of non-existing chart2.png
+// Use correct chart2.svg instead of non-existing chart2.png
 import chart1 from '../assets/icons/chart1.svg';
 import chart2 from '../assets/icons/chart2.svg';
 
